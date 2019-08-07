@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Disease Info</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+		crossorigin="anonymous"></script>
+
+	<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}"
+		media="screen,projection" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/material.css')}}">
+	<style>
+		.search-btn {
+			background-color: Transparent;
+			background-repeat: no-repeat;
+			border: none;
+			cursor: pointer;
+			overflow: hidden;
+			outline: none;
+		}
+
+		.search-btn:hover {
+			font-size: 1.5em;
+			font-weight: 800;
+			color: white;
+			box-shadow: 3px 3px 3px #EE6E73;
+		}
+
+		.search-btn:active,
+		.search-btn:hover {
+			background-color: Transparent;
+			background-repeat: no-repeat;
+			border: none;
+			cursor: pointer;
+			overflow: hidden;
+			outline: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="position: fixed;z-index: 2;width: 100%;">
+		<nav>
+			<div class="nav-wrapper" style="width: auto;">
+				<a href="#!" class="brand-logo" style="left: 50px;">
+					<k id="logo">HEALTH FOUNDATION</k>
+				</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+					<li><span>
+							<input type="text" placeholder="Search.." class="search-val" name="search">
+
+						</span></li>
+					<li><button type="button" class="search-btn" style="height: 60px; width: 100px;"><i
+								class="fa fa-search"></i></button>
+					</li>
+					<li><a href="#" class="hm">Home</a></li>
+					<li><a href="#" class="vis">Visulization</a></li>
+					<li><a href="{{url_for('static',filename='htmls/collapsible.html')}}" class="explore">Explore</a>
+					</li>
+					<li><a href="#" class="report">Report Diseases</a></li>
+
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="staticPage.html" class="move">Diseases</a></li>
+					<li><a href="collapsible.html" class="move">Spread</a></li>
+					<li><a href="FAQ.html" class="move">Explore</a></li>
+
+				</ul>
+			</div>
+		</nav>
+		<script>
+			$('.hm').click(() => {
+				window.location.href = '/';
+			})
+			$('.vis').click(() => {
+				window.location.href = '2';
+			})
+			$('.report').click(() => {
+				window.location.href = '3';
+			})
+		</script>
+	</div>
+	<center style="padding-top: 70px;"><img src="dil.png" id="image" style="width: 300px;height: auto;" />
+		<h3 class="tt"></h3>
+		<p class="desc">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+			industry's
+			Start with 'Lorem
+			ipsum dolor sit amet...'
+		</p>
+	</center>
+	<script>
+		var vs = window.location.href;
+		function parseURLParams(url) {
+			var queryStart = url.indexOf("?") + 1,
+				queryEnd = url.indexOf("#") + 1 || url.length + 1,
+				query = url.slice(queryStart, queryEnd - 1),
+				pairs = query.replace(/\+/g, " ").split("&"),
+				parms = {}, i, n, v, nv;
+
+			if (query === url || query === "") return;
+
+			for (i = 0; i < pairs.length; i++) {
+				nv = pairs[i].split("=", 2);
+				n = decodeURIComponent(nv[0]);
+				v = decodeURIComponent(nv[1]);
+
+				if (!parms.hasOwnProperty(n)) parms[n] = [];
+				parms[n].push(nv.length === 2 ? v : null);
+			}
+			return parms;
+		}
+		var urlParams = parseURLParams(vs)
+		console.log("--", urlParams['para1'][0], "-=")
+		$.post('/search_disease', { 'search-btn': urlParams['para1'][0] }, (data) => {
+			console.log(data)
+			$('.tt').html(data[0]);
+			$('#image').attr('src', data[2]);
+			$('.desc').html(data[1])
+		});
+	</script>
+</body>
+
+</html>

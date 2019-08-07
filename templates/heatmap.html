@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Heatmaps</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}"
+    media="screen,projection" />
+
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+      height: 70%;
+      width: 70%;
+      box-shadow: 3px 3px 3px #eeeeee;
+      border-radius: 5px;
+      position: absolute;
+      top: 60px;
+    }
+
+    .design {
+      background-image: url('/static/img/disease.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right;
+      position: absolute;
+      width: 70%;
+      height: 80%;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      right: 0;
+      bottom: 0;
+      -webkit-clip-path: polygon(100% 0,
+        0 100%,
+        100% 100%);
+      clip-path: polygon(100% 0,
+        0 100%,
+        100% 100%);
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(252, 230, 189, 0.12);
+    }
+
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto', 'sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+      top: 60px;
+    }
+
+    .search-btn {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .search-btn:hover {
+      font-size: 1.5em;
+      font-weight: 800;
+      color: white;
+      box-shadow: 3px 3px 3px #EE6E73;
+    }
+
+    .search-btn:active,
+    .search-btn:hover {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+    }
+
+    #floating-panel {
+      background-color: #fff;
+      border: 1px solid #999;
+      left: 25%;
+      padding: 5px;
+      position: absolute;
+      top: 60px;
+      z-index: 5;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="position: fixed;z-index: 2;width: 100%;">
+    <nav>
+      <div class="nav-wrapper" style="width: auto;">
+        <a href="#!" class="brand-logo" style="left: 50px;">
+          <k id="logo">HEALTH FOUNDATION</k>
+        </a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+          <li><span>
+              <form class="example" action="staticPage.html">
+                <input type="text" placeholder="Search.." name="search">
+
+              </form>
+            </span></li>
+          <li><button type="submit" class="search-btn" style="height: 60px;"><i class="fa fa-search"></i></button>
+          </li>
+          <li><a href="#" class="hm">Home</a></li>
+          <li><a href="#" class="vis">Visulization</a></li>
+          <li><a href="{{url_for('static',filename='htmls/collapsible.html')}}" class="explore">Explore</a>
+          </li>
+          <li><a href="#" class="report">Report Diseases</a></li>
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="staticPage.html" class="move">Diseases</a></li>
+          <li><a href="collapsible.html" class="move">Spread</a></li>
+          <li><a href="FAQ.html" class="move">Explore</a></li>
+
+        </ul>
+      </div>
+    </nav>
+    <script>
+      $('.hm').click(() => {
+        window.location.href = '';
+      })
+      $('.vis').click(() => {
+        window.location.href = '2';
+      })
+      $('.report').click(() => {
+        window.location.href = '3';
+      })
+    </script>
+  </div>
+
+  <div id="floating-panel">
+    <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+    <button onclick="changeGradient()">Change gradient</button>
+    <button onclick="changeRadius()">Change radius</button>
+    <button onclick="changeOpacity()">Change opacity</button>
+  </div>
+  <div class="design"></div>
+  <div id="map"></div>
+  <button id="adddisease" class="btn btn-danger" style="margin-top: 20px; margin-left: 20px;" name="adddisease">Report
+    Disease</button>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmlyWeCOsSQKyCLBt7AVpXmdZiw_W7zQ0&libraries=visualization&callback=initMap">
+    </script>
+  <script src="{{ url_for('static', filename='js/main2.js') }}"></script>
+  <script>
+    $('#adddisease').click(() => {
+      window.location.href = "3"
+    })
+  </script>
+</body>
+
+</html>

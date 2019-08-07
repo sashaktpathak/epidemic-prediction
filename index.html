@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="homestyle.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+
+</head>
+<body>
+<style type="text/css">
+	#g{
+		position: relative;
+		bottom: 6px;
+	}
+	#in{
+		position: relative;
+		bottom: 12px;
+	}
+	#t{
+	position: relative;
+		bottom: 18px;
+	}
+	*{
+		box-sizing: border-box;
+	}
+	#sidenav-overlay{
+		z-index: -1;
+	}
+</style>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){	
+	$('.carousel.carousel-slider').carousel({fullWidth: true});
+	});
+	$(document).ready(function(e){
+	$(".button-collapse").sideNav();	
+	});
+	</script>
+
+<div style="position: fixed;z-index: 2;width: 100%;">
+<nav> 
+    <div class="nav-wrapper" style="width: auto;">
+      <a href="#!" class="brand-logo" style="left: 50px;"><k id="logo">MAMMA IN CUCINA</k></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        
+        
+        <li><span>  <form class="example" action="action_page.php">
+  <input type="text" placeholder="Search.." name="search">
+  
+</form>             </span></li>
+<li><button type="submit"><i class="fa fa-search"></i></button></li>
+        <li><a href="collapsible.html" class="move">Main Course</a></li>
+        <li><a href="collapsible.html" class="move">Desserts</a></li>
+        <li><a href="FAQ.html" class="move">FAQ</a></li>
+        <li><a href="AboutUs.html" class="move">About Us</a></li>
+        
+        <li><a href="FeedUsBack.html" class="move">Feed Us Back</a></li>
+        <li><a href="ContactUs.html" class="move">Contact Us</a></li>
+        <li><a href="LogIn.html" class="move">Log In</a></li>
+        <li><a href="SignUp.html" class="move">Sign Up</a></li>
+      
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+      	<li><a href="HomePage.html">Home</a></li>
+      	<li><a href="HomePage.html">Snack Bar</a></li>
+      	<li><a href="HomePage.html">Main Course</a></li>
+      	<li><a href="Desserts.html">Desserts</a></li>
+      	<li><a href="FAQ.html">FAQ</a></li>
+      	<li><a href="AboutUs.html">About Us</a></li>
+      	<li><a href="FeedUsBack.html">Feed Us Back</a></li>
+      	<li><a href="ContactUs.html">Contact Us</a></li>
+      	<li><a href="LogIn.html">Log In</a></li>
+      	<li><a href="SignUp.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>	
+  <h1>My First Google Map</h1>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+<div id="DivForm">
+  <button type="button" style="display: none;" class="btn btn-primary" id="btn-modal" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="">
+          <input type="text" placeholder="Disease Name.." />
+          <input type="text" placeholder="Disease Severity" />
+          <textarea placeholder="Comment"></textarea> 
+          
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+  </div>
+<!-- The Code For Search Bar -->
+    <div class="search">
+
+</div>
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+ google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(map, event.latLng);
+  var dm = document.getElementById('btn-modal');
+  dm.click();
+});
+}
+
+
+
+function placeMarker(map, location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: 'Latitude: ' + location.lat() +
+    '<br>Longitude: ' + location.lng()
+  });
+  infowindow.open(map,marker);
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+  var jsosn={"batchcomplete":"","query":{"pages":{"21721040":{"pageid":21721040,"ns":0,"title":"Stack Overflow","extract":"Stack Overflow is a question and answer site for professional and enthusiast programmers. It is a privately held website, the flagship site of the Stack Exchange Network, created in 2008 by Jeff Atwood and Joel Spolsky. It features questions and answers on a wide range of topics in computer programming. It was created to be a more open alternative to earlier question and answer sites such as Experts-Exchange. The name for the website was chosen by voting in April 2008 by readers of Coding Horror, Atwood's popular programming blog.The website serves as a platform for users to ask and answer questions, and, through membership and active participation, to vote questions and answers up or down and edit questions and answers in a fashion similar to a wiki or Digg. Users of Stack Overflow can earn reputation points and \"badges\"; for example, a person is awarded 10 reputation points for receiving an \"up\" vote on an answer given to a question and 5 points for the \"up\" vote of a question, and can receive badges for their valued contributions, which represents a kind of gamification of the traditional Q&A site. Users unlock new privileges with an increase in reputation like the ability to vote, comment, and even edit other people's posts. All user-generated content is licensed under a Creative Commons Attribute-ShareAlike license.Closing questions is a main differentiation from Yahoo! Answers and a way to prevent low quality questions. The mechanism was overhauled in 2013; questions edited after being put \"on hold\" now appear in a review queue. Jeff Atwood stated in 2010 that duplicate questions are not seen as a problem but rather they constitute an advantage if such additional questions drive extra traffic to the site by multiplying relevant keyword hits in search engines.As of January 2019 Stack Overflow has over 10 million registered users, and it exceeded 16 million questions in mid 2018. Based on the type of tags assigned to questions, the top eight most discussed topics on the site are: JavaScript, Java,  C#, PHP, Android, Python, jQuery and HTML.Stack Overflow also has a Jobs section to assist developers in finding their next opportunity.  For employers, Stack Overflow provides tools to brand their business, advertise their openings on the site, and source candidates from Stack Overflow's database of developers who are open to being contacted."}}}}
+  console.log(jsosn.query);
+ 
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmlyWeCOsSQKyCLBt7AVpXmdZiw_W7zQ0&callback=myMap"></script>
+  <style type="text/css">
+  
+  @media only screen and (max-width: 1290px) {
+  		#logo{font-size: 0.8em;position: relative;top: -2px;}
+  }
+  @media only screen and (max-width: 1220px) {
+  		#logo{font-size: 0.6em;position: relative;top: -4px;}
+  @media only screen and (max-width: 1126px)  
+  {
+  		#logo{margin-left: -50px;font-size: 0.5em}
+  		.move{position: relative;font-size: 0.9em}
+  }
+  @media only screen and (max-width: 994px)
+  {
+  	#logo{font-size: 1em;left:50vw;top: 1px;}
+  }
+  #DivForm{
+    
+    width:0px;
+    height: 0px;
+    z-index: 5;
+  }
+  .search{
+    z-index: 5;
+    width:20px;
+    position: absolute;
+    top: 0px;
+
+  }
+  #btn{
+    height: 50%;
+  }
+ </style>
+</body>
+</html>

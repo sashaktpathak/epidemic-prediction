@@ -1,0 +1,105 @@
+
+.head
+{
+    width: 100%;
+    height: 300px;
+    background: url('../images/shattered.gif');
+}
+.head>.heading
+{
+    padding-top: 70px;
+    padding-left: 40%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.7em;
+    font-stretch: ultra-expanded;
+    font-weight: 700; 
+}
+.head>.subheading
+{
+    padding-top: 20px;
+    padding-left: 42%;
+    color: rgb(184, 184, 184);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.9em;
+    font-stretch: ultra-expanded;
+    font-weight: lighter; 
+}
+.our_details
+{
+    width: 100%;
+    height: 700px;
+    background: url('../images/delhi-map.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.our_details>div
+{
+    width: 65%;
+    height: 65%;
+    background-color: white;
+    box-shadow: 0 0 10px gray;
+    padding: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-muted
+{
+    font-weight: lighter;
+}
+.our_details p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+body
+{
+    top:0;
+    position: relative;
+}
+.row
+{
+    padding-left: 31%;
+}
+.cl
+{
+    width: 400px; 
+}
+a:visited
+{
+    color: black;
+}
+a{
+    color: black;
+}
+.form
+{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    color: white;
+    
+}
+.together_input
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+form
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+textarea
+{
+    width: 250px;
+    height: 130px;
+}

@@ -1,0 +1,251 @@
+html
+{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    background-color: #fff;
+    perspective: 1px;
+    margin: 0;
+    padding: 0;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: "Luna";
+}
+header{
+    box-sizing: border-box;
+    height: 102vh;
+    padding: 30vw 0 5vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    z-index: -100;
+}
+header h1
+{
+    margin-top: 100px;
+}
+header, header:before
+{
+    background: 50% 50%;
+}
+header::before
+{
+    bottom: 0;
+    content: ""; 
+    left:0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background: url('../images/tri.jpg');
+    background-size: cover; 
+    transform-origin: center center 0;
+    transform:  translateZ(-1px) scale(2);
+    z-index: -100;
+    min-height: 70vh;
+}
+
+header *
+{
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 1em 0;
+}
+.spnosor_logo
+{
+    background: url('../images/Ubisoft_logo.svg');
+    background-size: 250px 200px; 
+    background-repeat: no-repeat; 
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+}
+.about_studio
+{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(253, 252, 254);
+    align-items: center;
+    position: relative;
+}
+.about_studio>.heading
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.7em;
+    font-stretch: ultra-expanded;
+    font-weight: bolder;
+    font-variant: small-caps;
+    margin-top: 5%;
+}
+.about_studio>.subheading
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4em;
+    font-stretch: ultra-expanded;
+    font-weight: lighter;
+    color: rgb(188, 198, 200);
+    font-variant: small-caps;
+    margin-top: 2%;
+}
+.studio_data
+{
+    display: flex;
+    background-color: white;
+    padding-top: 5vh;   
+    flex-direction: row;
+    height: 400px;
+    position: relative;
+    justify-content: center;
+}
+.data_transparent
+{
+    height: 400px;
+    background-color: rgb(255,255,255,0.3);
+    width: 100%;
+    position: relative;
+}
+.data_transparent>div
+{
+    padding-left: 150px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.7em;
+    color: rgb(253,252,253);
+    display: inline-block;
+    position: relative;
+}
+aside
+{
+    box-sizing: border-box;
+    height: 200px;
+    padding: 0 0 0;
+    position: relative;
+    transform-style: inherit;
+    z-index: -3;
+    width: 100vw;
+}
+
+aside, aside:before
+{
+    background: 50% 50%;
+}
+aside::before,aside::after
+{
+    bottom: 0;
+    content: ""; 
+    left:0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    background: url('../images/img1.jpg');
+    background-size: 100% 100%; 
+    transform-origin: center center 0;
+    transform:  translateZ(-1px) scale(2);
+    z-index: -3;
+    min-height: 200px;
+}
+aside::after
+{
+    height: 500px;
+}
+aside *
+{
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 1em 0;
+}
+.temp_height{
+    height: 80vh;
+    margin-bottom: -50px;
+}
+.test{
+    background-color: yellow;
+}
+.whatwedo_sponsor
+{
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 248, 248);
+    align-items: center;
+}
+.whatwedo_sponsor>.heading
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.7em;
+    font-stretch: ultra-expanded;
+    font-weight: 700;
+    font-variant: small-caps;
+    margin-top: 5vw;
+}
+.whatwedo_sponsor>.subheading
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.4em;
+    font-stretch: ultra-expanded;
+    font-weight: lighter;
+    color: rgb(177, 177, 177);
+    font-variant: small-caps;
+    margin-top: 2%;
+}
+.whatwedo_sponsor_card
+{
+    background: linear-gradient(rgb(250, 248, 248),rgb(245, 243, 244));
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height:1100px;
+    justify-content: center;
+    width: 100.8%;
+}
+.whatwedo_sponsor_card>div>div
+{
+    background-color:white;
+    text-align: center;
+    margin-left: 70px;
+    margin-bottom: 100px;
+    transition: all 0.5s;
+    border: 0.5px solid whitesmoke;
+    box-shadow:  0 0  3px gray;  
+    margin-top: 10px;
+    width: 80%;
+}
+.whatwedo_sponsor_card>div>div:hover
+{
+    box-shadow:  0 7px  15px gray;
+    transform: scale(1.05);
+    border-radius: 5px;  
+}
+.sponsor_card_img>img
+{
+    width: 100%;
+    height: 100%;
+}
+.sponsor_card_img
+{
+    width: 100%;
+    height: 30%;
+}
+.sponsor_card
+{
+    padding: 0px;
+}
+.spnosor_card_body>p
+{
+    line-height: 40px;
+    margin-top: 50px;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='homestyle.css')}}">
+  <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}"
+    media="screen,projection" />
+  <link rel="stylesheet" href="{{url_for('static',filename='css/material.css')}}">
+
+  <title></title>
+
+</head>
+
+<body>
+  <style type="text/css">
+    #g {
+      position: relative;
+      bottom: 6px;
+    }
+
+    #in {
+      position: relative;
+      bottom: 12px;
+    }
+
+    #t {
+      position: relative;
+      bottom: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #sidenav-overlay {
+      z-index: -1;
+    }
+
+    a:active,
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+
+    a:hover {
+      font-size: 1.1em;
+      font-weight: 800;
+      color: white;
+      box-shadow: 3px 3px 3px #EE6E73;
+    }
+
+    .image {
+      background-image: url("../static/img/front.jpg");
+      height: 70vh;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      top: 25px;
+      background-attachment: fixed;
+      background-position: center
+    }
+
+    .faded-black-div {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    .search-btn {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .search-btn:hover {
+      font-size: 1.5em;
+      font-weight: 800;
+      color: white;
+      box-shadow: 3px 3px 3px #EE6E73;
+    }
+
+    .search-btn:active,
+    .search-btn:hover {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+    }
+
+    .carousel {
+      background-attachment: fixed;
+      background-position: center
+    }
+
+    form {
+      padding: 10px;
+    }
+
+    .frm>input {
+      padding: 15px;
+      border: 1.5px black solid !important;
+      border-radius: 10px;
+    }
+  </style>
+  <script type="text/javascript" src="{{url_for('static',filename='js/materialize.min.js')}}"></script>
+
+
+  <div style="position: fixed;z-index: 2;width: 100%;">
+    <nav>
+      <div class="nav-wrapper" style="width: auto;">
+        <a href="#!" class="brand-logo" style="left: 50px;">
+          <k id="logo">HEALTH FOUNDATION</k>
+        </a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+          <li><span>
+              <form class="example" action="staticPage.html">
+                <input type="text" placeholder="Search.." name="search">
+
+              </form>
+            </span></li>
+          <li><button type="submit" class="search-btn" style="height: 60px;"><i class="fa fa-search"></i></button>
+          </li>
+          <li><a href="#" class="hm">Home</a></li>
+          <li><a href="#" class="vis">Visulization</a></li>
+          <li><a href="{{url_for('static',filename='htmls/collapsible.html')}}" class="explore">Explore</a>
+          </li>
+          <li><a href="#" class="report">Report Diseases</a></li>
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="staticPage.html" class="move">Diseases</a></li>
+          <li><a href="collapsible.html" class="move">Spread</a></li>
+          <li><a href="FAQ.html" class="move">Explore</a></li>
+
+        </ul>
+      </div>
+    </nav>
+    <script>
+      $('.hm').click(() => {
+        window.location.href = '';
+      })
+      $('.vis').click(() => {
+        window.location.href = '2';
+      })
+      $('.report').click(() => {
+        window.location.href = '3';
+      })
+    </script>
+  </div>
+  <h3 style="padding-top: 60px;">Epidemiology Reporting</h3>
+
+  <div id="googleMap" style="width:100%;height:400px;"></div>
+  <form method="post" class="frm">
+    <input type="text" id="dise" placeholder="Disease Name.." />
+    <input type="text" placeholder="Disease Severity" />
+    <input type="text" id="Lat" style="display: none;" placeholder="Disease Severity" />
+    <input type="text" id="Lon" style="display:none;" placeholder="Disease Severity" />
+
+    <textarea placeholder="Comment"></textarea>
+    </div>
+    <div class="modal-footer">
+      <input type="button" class="btn btn-primary btn-add" value="SUBMIT"></input>
+    </div>
+  </form>
+  <!-- The Code For Search Bar -->
+  <div class="search">
+
+  </div>
+  <script>
+    function myMap() {
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+      google.maps.event.addListener(map, 'click', function (event) {
+        placeMarker(map, event.latLng);
+
+      });
+    }
+
+
+
+    function placeMarker(map, location) {
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+      2
+      var infowindow = new google.maps.InfoWindow({
+        content: 'Latitude: ' + location.lat() +
+          '<br>Longitude: ' + location.lng()
+
+      });
+      infowindow.open(map, marker);
+    }
+    $('.btn-add').click(() => {
+
+      $.post('/addtocsv', { 'lat': $('#Lat').val(), 'lon': $('#Lon').val(), 'disease': $('#dise').val() }, function (data) {
+        console.log(data)
+        window.location.href = '2';
+      })
+
+    })
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmlyWeCOsSQKyCLBt7AVpXmdZiw_W7zQ0&callback=myMap"></script>
+  <style type="text/css">
+    @media only screen and (max-width: 1290px) {
+      #logo {
+        font-size: 0.8em;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    @media only screen and (max-width: 1220px) {
+      #logo {
+        font-size: 0.6em;
+        position: relative;
+        top: -4px;
+      }
+
+      @media only screen and (max-width: 1126px) {
+        #logo {
+          margin-left: -50px;
+          font-size: 0.5em
+        }
+
+        .move {
+          position: relative;
+          font-size: 0.9em
+        }
+      }
+
+      @media only screen and (max-width: 994px) {
+        #logo {
+          font-size: 1em;
+          left: 50vw;
+          top: 1px;
+        }
+      }
+
+      #DivForm {
+
+        width: 0px;
+        height: 0px;
+        z-index: 5;
+      }
+
+      .search {
+        z-index: 5;
+        width: 20px;
+        position: absolute;
+        top: 0px;
+
+      }
+
+      #btn {
+        height: 50%;
+      }
+  </style>
+
+</body>
+
+</html>

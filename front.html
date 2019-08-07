@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='homestyle.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/materialize.min.css')}}"
+        media="screen,projection" />
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/material.css')}}">
+</head>
+<style type="text/css">
+    #g {
+        position: relative;
+        bottom: 6px;
+    }
+
+    #in {
+        position: relative;
+        bottom: 12px;
+    }
+
+    #t {
+        position: relative;
+        bottom: 18px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    #sidenav-overlay {
+        z-index: -1;
+    }
+
+    a:active,
+    a:hover,
+    a:focus {
+        text-decoration: none;
+    }
+
+    a:hover {
+        font-size: 1.1em;
+        font-weight: 800;
+        color: white;
+        box-shadow: 3px 3px 3px #EE6E73;
+    }
+
+    .image {
+        background-image: url("../static/img/front.jpg");
+        height: 70vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        top: 25px;
+        background-attachment: fixed;
+        background-position: center
+    }
+
+    .faded-black-div {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.55);
+    }
+
+    .search-btn {
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .search-btn:hover {
+        font-size: 1.5em;
+        font-weight: 800;
+        color: white;
+        box-shadow: 3px 3px 3px #EE6E73;
+    }
+
+    .search-btn:active,
+    .search-btn:hover {
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+    }
+
+    .carousel {
+        background-attachment: fixed;
+        background-position: center
+    }
+</style>
+
+<body>
+<script type="text/javascript">
+	
+	 $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+  });
+</script>
+    <div style="position: fixed;z-index: 2;width: 100%;">
+        <nav>
+            <div class="nav-wrapper" style="width: auto;">
+                <a href="#!" class="brand-logo" style="left: 50px;">
+                    <k id="logo">HEALTH FOUNDATION</k>
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+                    <li><span>
+                            <form class="example" action="staticPage.html">
+                                <input type="text" placeholder="Search.." name="search">
+
+                            </form>
+                        </span></li>
+                    <li><button type="submit" class="search-btn" style="height: 60px;"><i
+                                class="fa fa-search"></i></button>
+                    </li>
+                    <li><a href="{{url_for('static',filename='staticPage.html')}}" class="move">Diseases</a></li>
+                    <li><a href="{{url_for('static',filename='htmls/collapsible.html')}}" class="move">Spread</a></li>
+                    <li><a href="{{url_for('static',filename='FAQ.html')}}" class="move">Explore</a></li>
+                    
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="staticPage.html" class="move">Diseases</a></li>
+                    <li><a href="collapsible.html" class="move">Spread</a></li>
+                    <li><a href="FAQ.html" class="move">Explore</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </div>
+   <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+  </div>
+    <div class="cards-div">
+        <div class="whatwedo">
+            <div class="heading">
+                <p>W h a t &nbsp&nbsp&nbspw e&nbsp&nbsp&nbsp d o</p>
+            </div>
+            <div class="subheading">Investigate &nbsp;&nbsp Research &nbsp;&nbsp; Deliver</div>
+        </div>
+        <div class="boxes row">
+            <div class="box1 col-lg-2 col-sm-6 col-md-5" style="padding: 0;"><img
+                    src="{{url_for('static',filename='img/research.jpg')}}">
+                <h4 style="margin-top: 20px;">Investigate</h4>
+                <div class="text-left">
+                    Knowing the contributing factors to foodborne illness outbreaks is critical to stopping them.
+                    Environmental health specialists find contributing factors by investigating outbreaks.
+                    But these investigations often do not give enough information. This may be the result of ineffective
+                    investigation
+                    practices and problems faced during investigations.
+                    Thus, it is important to collect data that will describe investigation practices and problems.</div>
+            </div>
+            <div class="box2 col-sm-6 col-lg-2 col-md-5" onclick="redirect(3)" style="padding: 0;"><img
+                    src="{{url_for('static',filename='img/research.jpg')}}">
+                <h4 style="margin-top: 20px;">Research</h4>
+                <div class="text-left">
+                    longstanding and successful program investigating the basic biology of immunology, with a focus on
+                    the genetics underlying immune system function and autoimmune disease. We are now expanding our
+                    efforts to look at immune response to microbes, including pathogens and symbiotic microbes within
+                    our normal microbiomes. The effort will also include vaccine development and other applied
+                    translational research! </div>
+            </div>
+            <div class="box3 col-sm-6 col-lg-2 col-md-5" style="padding: 0;"><img
+                    src="{{url_for('static',filename='img/discover.jpg')}}">
+                <h4 style="margin-top: 20px;">Discover</h4>
+                <div class="text-left">
+                    The World Health Organization (WHO) mostly works to reduce the physical toll of disease. But last
+                    week it turned to another kind of harm: the insult and stigma inflicted by diseases named for
+                    people, places, and animals. Among the existing monikers that its new guidelines “for the Naming of
+                    New Human Infectious Diseases” would discourage: Ebola, swine flu, Rift Valley Fever,
+                    Creutzfeldt-Jakob disease, and monkey pox.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!------------------------------------------------------------------Scripts---------------------------------------------------->
+    <script type="text/javascript" src="{{url_for('static',filename='js/materialize.min.js')}}"></script>
+    <script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 2000
+        })
+    </script>
+</body>
+
+</html>

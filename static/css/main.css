@@ -1,0 +1,454 @@
+body
+{
+    margin: 0;
+}
+.slideshow-container
+{
+    max-width: 100%;
+    max-height: 600px;
+    position: relative;
+    
+}
+.myslides
+{
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0; 
+    display: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .text-1
+  {
+      color:#f2f2f2;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 53%;
+      width: 95%;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 5em;
+      font-variant: small-caps;
+      font-weight: bold;
+      font-stretch: ultra-expanded;
+ }
+ .text-2
+ {
+     color:#f2f2f2;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 47%;
+     width: 65%;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: 5em;
+     font-variant: small-caps;
+     font-weight: bold;
+     font-stretch: ultra-expanded;
+}
+.text-3
+{
+    color:#f2f2f2;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50%;
+    width: 45%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5em;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+}
+.text-4
+{
+    color:#f2f2f2;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 50%;
+    width: 45%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 5em;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+}
+.inner-text-1
+ {
+     color:#f2f2f2;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 47%;
+     width: 75%;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-variant: normal;
+     font-weight: normal;
+     font-stretch: normal;
+     font-size: 0.96em;
+}
+.inner-text-2
+ {
+     color:#f2f2f2;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 44%;
+     width: 70%;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-variant: normal;
+     font-weight: normal;
+     font-stretch: normal;
+     font-size: 0.75em;
+}
+.inner-text-3
+ {
+     color:#f2f2f2;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 48%;
+     width: 55%;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-variant: normal;
+     font-weight: normal;
+     font-stretch: normal;
+     font-size: 0.95em;
+}
+.inner-text-4
+ {
+     color:#f2f2f2;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 55%;
+     width: 45%;
+     text-align: center;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-variant: normal;
+     font-weight: normal;
+     font-stretch: normal;
+     font-size: 0.9em;
+}
+ .buttonn{
+      padding: 5.5px 30px;
+      position: absolute;
+      bottom: 23%;
+      left: 48%;
+      text-align: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1.3em;
+      font-variant: small-caps;
+      background: linear-gradient(rgb(241, 57, 57),rgb(238, 64, 52));
+ }
+ .buttonn1{
+  padding: 5.5px 30px;
+  position: absolute;
+  bottom: 23%;
+  left: 38%;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3em;
+  font-variant: small-caps;
+  background: linear-gradient(rgb(241, 57, 57),rgb(238, 64, 52));
+}
+.buttonn2{
+  padding: 5.5px 30px;
+  position: absolute;
+  bottom: 23%;
+  left: 55%;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3em;
+  font-variant: small-caps;
+  background: linear-gradient(rgb(241, 57, 57),rgb(238, 64, 52));
+}
+ .navbar
+ {
+    position: absolute;
+    left: 48%;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top:0;
+    right: 0px;
+    font-variant: small-caps;
+    display: block;
+ }
+ .buttonn:hover,.buttonn1:hover,.buttonn2:hover
+    {
+        box-shadow: 0 0 18px gray;
+        color: white;
+    }
+ .fadee {/* 
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s; */
+  }
+  
+  @-webkit-keyframes nothing {
+    from {opacity: 1}
+    to {opacity: 1}
+  }
+  
+  @keyframes nothing {
+    from {opacity: 1}
+    to {opacity: 1}
+  }
+  @-webkit-keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+  }
+  img{
+      top:0;
+  }
+  .list>li
+  {
+      float: left;
+      list-style-type: none;
+      padding-right: 30px;
+      animation-name: nothing;
+      animation-duration: 0.7s;
+      -webkit-animation-name: nothing;
+      -webkit-animation-duration: 0.7s;
+      transition: font-size 1s;
+      font-size:1.1em;
+      color:rgba(242, 241, 242, 0.674);
+  }
+   .list>li>ul
+  {
+    list-style-type: none;
+    display: none;
+  } 
+  ul>li:hover ul
+  {
+    display: block;
+  }
+  ul>li>ul>li
+  {
+    color:rgba(242, 241, 242, 0.7);
+    font-size: 1.0em;
+    padding-top: 9px; 
+  }
+  ul>li>ul>li:hover
+  {
+    color:rgba(242, 241, 242, 0.9);
+    font-size: 1.1em;
+  }
+  ul>li>ul
+  {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 25px;
+    padding-top: 20px; 
+    margin-top: 5px;  
+    background-color: rgba(255, 255, 255, 0.49);
+    border-radius: 15px;
+  }
+  .list>li:hover 
+  {
+    color:rgba(255, 255, 253, 0.874);
+    font-size: 1.4em;
+  }
+  .bgimg
+  {
+    background: url('../images/img1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;  
+    width: 100%;
+    height: 300px;
+    position: absolute;
+  }
+  .para-w
+  {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.73);
+  }
+  .translucent-ww
+  {
+    display: block;
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  /* ======================================================================= */
+  .anim
+{
+    font-size: 7em;
+    background-color: rgba(134, 134, 134,0.35);
+    border-width: 6px;
+    border-style: solid;
+    border-color:   rgb(255, 182, 99) rgb(255, 182, 99) rgb(255, 182, 99) rgba(0,0,0,0.0);
+    padding: 0px;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    transform: rotateZ(45deg);  
+}
+.anim-full
+{
+    font-size: 7em;
+    background-color: rgba(134, 134, 134,0.35);
+    border-style: solid;
+    border-color:   rgb(255, 182, 99) rgb(255, 182, 99) rgb(255, 182, 99) rgb(255, 182, 99);
+    padding: 0px;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    transform: rotateZ(45deg);  
+}
+.anim>div
+{
+    margin-top:10px;
+    margin-left:35px; 
+    transform: rotateZ(-45deg);
+}
+@keyframes rot1 
+{
+    0%{
+      border-color:   rgb(255, 182, 99) rgb(255, 182, 99) rgb(255, 182, 99) rgba(0,0,0,0.0);
+    }
+    20%{
+      border-color:   rgba(0,0,0,0.0) rgba(0,0,0,0.0) rgba(0,0,0,0.0) rgba(0,0,0,0.0);
+    }
+    45%{
+      border-color:   rgb(255, 182, 99) rgba(0,0,0,0.0) rgba(0,0,0,0.0) rgba(0,0,0,0.0);
+    }
+    70%{
+      border-color:   rgb(255, 182, 99) rgb(255, 182, 99) rgba(0,0,0,0.0) rgba(0,0,0,0.0);
+    }
+    100%{
+      border-color:   rgb(255, 182, 99) rgb(255, 182, 99) rgb(255, 182, 99) rgba(0,0,0,0.0);
+    }
+}
+.anim:hover
+{
+    animation-name: rot1;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(.76,1.19,0,1.85);
+}
+.para-w>div>div
+{
+  display: inline-block;
+}
+.cir-box
+{
+  padding-left: 9%;
+  padding-top: 25px; 
+}
+  /* ======================================================================= */
+.logo
+{
+ top: 20%;
+ height: 150px;
+}
+.logo-assasin
+{
+ top: 32%;
+ height: 280px;
+}
+.logo-spider
+{
+ height: 155px;
+}
+.e3-logo
+{
+  position: absolute;
+  left: 5%;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  top:3%;
+  right: 0px;
+  font-variant: small-caps;
+  display: block;
+  width: 100px;
+  height: 70px;
+}
+body{
+  overflow-x: hidden;
+}
+a:link {
+  color:  rgba(255, 255, 255, 0.49);
+}
+
+/* visited link */
+a:visited {
+  color:  rgba(255, 255, 255, 0.49);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* selected link */
+a:active {
+  color: rgba(255, 255, 255, 0.87);
+}
+@media  screen and (max-width: 1000px) 
+{
+  .boxes
+  {
+    height: 1900px;
+    
+  }
+  .boxes2
+  {
+    height: 2200px;
+  }
+  .translucent-ww,.para-w
+  {
+    height: 1100px;
+  }
+  .card_boxes
+  {
+    height: 1800px;
+  }
+  .navbar
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  .game_feature_data
+  {
+    height: 1800px;
+  }
+  .game_card
+  {
+    height: 1000px;
+  }
+  .clipping > iframe
+  {
+    margin-left: 10%;
+    margin-top: 20%;
+    width: 70%;
+    height: 50%;
+  }
+  .whatwedo_sponsor_card
+  {
+    height: 2700px;
+  }
+}

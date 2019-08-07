@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+function printMousePos(event) {
+    document.body.textContent =
+    "clientX: " + event.clientX +
+    " - clientY: " + event.clientY;
+}
+    document.addEventListener('click',printMousePos);
+
+
+</script>
+<div id="test"></div>
+</body>
+</html>
